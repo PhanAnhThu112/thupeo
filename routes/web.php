@@ -25,3 +25,12 @@ Route::get('/tamgiacvang',[App\Http\Controllers\TamgiacController::class,'Hinhta
 Route::post('/tamgiacvang',[App\Http\Controllers\TamgiacController::class,'tinhtamgiac']);
 Route::get('/tugiac',[App\Http\Controllers\TugiacController::class,'Hinhtugiac']);
 Route::post('/tugiac',[App\Http\Controllers\TugiacController::class,'tinhtugiac']);
+
+
+Route::get('/Form',[App\Http\Controllers\SignupController::class,'index']);
+Route::post('/Form',[App\Http\Controllers\SignupController::class,'displayInfor']);
+
+Route::get('/create', [App\Http\Controllers\RoomController::class,'create']);
+Route::post('/create', [App\Http\Controllers\RoomController::class,'store'])->name('rooms.store');
+ 
+Route::get('/master', [App\Http\Controllers\PageController::class,'getIndex']);
