@@ -34,3 +34,13 @@ Route::get('/create', [App\Http\Controllers\RoomController::class,'create']);
 Route::post('/create', [App\Http\Controllers\RoomController::class,'store'])->name('rooms.store');
  
 Route::get('/master', [App\Http\Controllers\PageController::class,'getIndex']);
+Route::get('trangchu',[App\Http\Controllers\PageController::class, 'getIndex']);
+
+Route::get('/laravel',function(){
+    Schema::create('products', function($table){
+        $table->increments('id');
+        $table->string('ten',200);
+    });
+    echo"da thuc hien tao lenh thanh cong";
+
+});
