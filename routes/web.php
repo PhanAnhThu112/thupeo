@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +36,7 @@ Route::post('/create', [App\Http\Controllers\RoomController::class,'store'])->na
 Route::get('/master', [App\Http\Controllers\PageController::class,'getIndex']);
 Route::get('trangchu',[App\Http\Controllers\PageController::class, 'getIndex']);
 
+
 Route::get('/laravel',function(){
     Schema::create('products', function($table){
         $table->increments('id');
@@ -44,3 +45,7 @@ Route::get('/laravel',function(){
     echo"da thuc hien tao lenh thanh cong";
 
 });
+Route::get('/chitiet_sanpham/{id}',[App\Http\Controllers\PageController::class, 'getChitiet']);
+Route::get('/about', [App\Http\Controllers\PageController::class,'getAboutus']);
+Route::get('contact',[App\Http\Controllers\PageController::class, 'getLienhe']);
+Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
