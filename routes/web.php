@@ -45,7 +45,20 @@ Route::get('/laravel',function(){
     echo"da thuc hien tao lenh thanh cong";
 
 });
-Route::get('/chitiet_sanpham/{id}',[App\Http\Controllers\PageController::class, 'getChitiet']);
+Route::get('chitiet_sanpham/{id}',[App\Http\Controllers\PageController::class, 'getChitiet']);
 Route::get('/about', [App\Http\Controllers\PageController::class,'getAboutus']);
 Route::get('contact',[App\Http\Controllers\PageController::class, 'getLienhe']);
 Route::get('/type/{id}',[PageController::class,'getLoaiSp']);
+
+Route::get('/admin',[App\Http\Controllers\PageController::class,'getIndexAdmin']);
+
+    Route::get('/admin-add-form',[App\Http\Controllers\PageController::class,'getAdminAdd'])->name('add-product');
+    
+    Route::post('/admin-add-form',[App\Http\Controllers\PageController::class,'postAdminAdd']);
+    
+    Route::get('/admin-edit-form/{id}',[App\Http\Controllers\PageController::class,'getAdminEdit']);
+    Route::post('/admin-edit',[App\Http\Controllers\PageController::class,'postAdminEdit']);
+    
+    Route::post('/admin-delete/{id}',[App\Http\Controllers\PageController::class,'postAdminDelete']);
+    
+    Route::get('admin-export',[App\Http\Controllers\PageController::class,'exportAdminProduct'])->name('export');
